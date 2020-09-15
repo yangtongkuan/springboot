@@ -7,14 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-public class Springboot2HellowordApplication {
+public class Springboot201HellowordApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Springboot2HellowordApplication.class, args);
+        SpringApplication.run(Springboot201HellowordApplication.class, args);
     }
 
     @GetMapping("/test")
     public Object test() {
         return "hello word";
     }
+
 }

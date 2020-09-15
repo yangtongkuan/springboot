@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.matcha</groupId>
-    <artifactId>springboot2-helloword</artifactId>
+    <artifactId>springboot2-01-helloword</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot2-01-helloword</name>
     <description>Demo project for Spring Boot</description>
