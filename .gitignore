@@ -1,0 +1,137 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+/target
+/target/*
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+/RUNNING_PID
+/config
+
+
+# -----------------------------------------------------------------------------
+# DO NOT MODIFY THE CONTENTS BELOW IN ORDER TO AVOID CONFLICTS WHEN UPDATE!
+# The contents below are copied from https://github.com/github/gitignore, do
+# not modify the contents below in order to avoid conflicts when updating from
+# https://github.com/github/gitignore.
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# -----------------------------------------------------------------------------
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# -----------------------------------------------------------------------------
+# https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# -----------------------------------------------------------------------------
+
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+# -----------------------------------------------------------------------------
+# https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
+# -----------------------------------------------------------------------------
+
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# Eclipse Core
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+/target
