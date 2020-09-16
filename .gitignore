@@ -4,8 +4,8 @@
 *.iml
 *.ipr
 out/
-/target
-/target/*
+*/target
+*/target/*
 
 ### NetBeans ###
 nbproject/private/
