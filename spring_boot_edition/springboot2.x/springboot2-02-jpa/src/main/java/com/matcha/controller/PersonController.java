@@ -18,7 +18,6 @@ public class PersonController {
     @PostMapping("/save")
     public Object savePerson(@RequestBody PersonEntity personEntity) {
         personRepository.save(personEntity);
-        System.out.println("--->" + personEntity.toString());
         return "ok";
     }
 }
