@@ -30,7 +30,7 @@ public class TestCustomRealmAuthenticator {
             System.out.println("认证信息:" + subject.isAuthenticated());
         } catch (UnknownAccountException e) {
             e.printStackTrace();
-            System.out.println("认证失败：为获取到用户信息");
+            System.out.println("认证失败：未获取到用户信息");
         } catch (IncorrectCredentialsException e) {
             e.printStackTrace();
             System.out.println("认证失败: 密码不正确");
