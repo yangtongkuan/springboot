@@ -8,6 +8,8 @@ import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.subject.Subject;
 
+import java.util.Arrays;
+
 /**
  * 测试mds + salt 加盐认证
  */
@@ -43,6 +45,19 @@ public class TestAuthenticatorCustomMd5Realm {
             System.out.println("认证失败: 密码不正确");
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        if (subject.isAuthenticated()) {
+            // 是否拥有admin角色
+            System.out.println(subject.hasRole("admin"));
+
+            // 是否同时有 user 和 admin 的角色
+            System.out.println(subject.hasAllRoles(Arrays.asList("admin", "user")));
+
+            // 是否分别有user 和 admin的角色
+            boolean[] booleans = subject.hasRoles(Arrays.asList("admin", "super", "user"));
+            for (boolean item : booleans) {
+                System.out.println(item);
+            }
         }
     }
 }
