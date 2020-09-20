@@ -9,6 +9,7 @@ import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.subject.Subject;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 测试mds + salt 加盐认证
@@ -58,6 +59,15 @@ public class TestAuthenticatorCustomMd5Realm {
             for (boolean item : booleans) {
                 System.out.println(item);
             }
+
+            System.out.println("=======================================================");
+            System.out.println(subject.isPermitted("user:find:*"));
+            System.out.println(subject.isPermitted("product:*:*"));
+            boolean[] subjectPermitted = subject.isPermitted("user:find:*", "user:update:*");
+            for (boolean item : subjectPermitted) {
+                System.out.println(item);
+            }
+            System.out.println(subject.isPermittedAll("user:find:*", "product:update:*"));
         }
     }
 }

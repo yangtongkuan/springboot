@@ -23,6 +23,10 @@ public class CustomMd5Realm extends AuthorizingRealm {
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.addRole("admin");
         simpleAuthorizationInfo.addRole("user");
+
+        // 有创建用户的所有权限 以及商品的查询权限
+        simpleAuthorizationInfo.addStringPermission("user:*:*");
+        simpleAuthorizationInfo.addStringPermission("product:find:*");
         return simpleAuthorizationInfo;
     }
 
