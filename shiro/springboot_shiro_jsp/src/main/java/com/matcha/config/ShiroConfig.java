@@ -18,10 +18,14 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean getShiroFilterFactoryBean(DefaultWebSecurityManager securityManager) {
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
         factoryBean.setSecurityManager(securityManager);
+        /**
+         * 公共访问资源必须放在授权资源之前  anon 表示放行资源
+         */
         Map<String, String> map = new LinkedHashMap<>();
+        map.put("/user/login", "anon"); // 登录
+        map.put("/register.jsp", "anon"); // 注册界面
+        map.put("/user/register", "anon"); // 用户注册
         map.put("/**", "authc");  // authc 标识资源既要做认证也要做授权
-        map.put("/user/login", "anon"); // anon 表示放行资源
-        map.put("/register.jsp", "anon"); // anon 表示放行资源
         factoryBean.setUnauthorizedUrl("/login.jsp"); // 默认没有登录跳转界面
         factoryBean.setFilterChainDefinitionMap(map);
         return factoryBean;
