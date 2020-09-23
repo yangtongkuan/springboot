@@ -19,7 +19,9 @@ public class ShiroConfig {
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
         factoryBean.setSecurityManager(securityManager);
         Map<String, String> map = new LinkedHashMap<>();
-        map.put("/index.jsp", "authc");  // authc 标识资源既要做认证也要做授权
+        map.put("/**", "authc");  // authc 标识资源既要做认证也要做授权
+        map.put("/user/login", "anon"); // anon 表示放行资源
+        map.put("/register.jsp", "anon"); // anon 表示放行资源
         factoryBean.setUnauthorizedUrl("/login.jsp"); // 默认没有登录跳转界面
         factoryBean.setFilterChainDefinitionMap(map);
         return factoryBean;
