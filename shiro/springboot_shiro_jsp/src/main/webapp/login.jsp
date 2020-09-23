@@ -9,13 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>系统主页v1.0</h1>
-    <a href="${pageContext.request.contextPath}/user/logout">退出应用</a>
-    <ul>
-        <li><a href="">用户管理</a></li>
-        <li><a href="">商品管理</a></li>
-        <li><a href="">订单管理</a></li>
-        <li><a href="">物流管理</a></li>
-    </ul>
+    <h1>用户登录</h1>
+    <form action="${pageContext.request.contextPath}/user/login">
+        用户名: <input type="text" name="username"/> <br>
+        密码  : <input type="text" name="password"> <br>
+        <input type="submit" value="登录">
+
+    </form>
 </body>
 </html>
