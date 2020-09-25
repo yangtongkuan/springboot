@@ -1,6 +1,7 @@
 package com.matcha.config;
 
 import com.matcha.shiro.CustomRealm;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -43,7 +44,14 @@ public class ShiroConfig {
     // 3. 注入realm
     @Bean
     public Realm getRealm() {
-        return new CustomRealm();
+
+        CustomRealm realm = new CustomRealm();
+        // 设置匹配器
+        HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
+        credentialsMatcher.setHashAlgorithmName("md5"); // 加密规则
+        credentialsMatcher.setHashIterations(1024);     // 散列次数
+        realm.setCredentialsMatcher(credentialsMatcher);
+        return realm;
     }
 
 
