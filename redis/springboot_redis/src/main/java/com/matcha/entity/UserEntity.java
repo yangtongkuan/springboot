@@ -1,8 +1,10 @@
 package com.matcha.entity;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,17 +15,11 @@ import java.io.Serializable;
  * @To change this template use File | Settings | File Templates.
  */
 @Data
-public class UserEntity  implements Serializable {
-    private String userId;
+@Accessors(chain = true)
+public class UserEntity implements Serializable {
+    private String id;
     private String name;
     private Integer age;
+    private Date bir;
 
-    @Override
-    public String toString() {
-        return "UserEntity{" +
-                "userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
 }

@@ -6,3 +6,18 @@ spring:
     database: 0
     host: 39.97.252.169
     port: 7000
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.97.252.169:3306/2001?characterEncoding=UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: sdbs
+mybatis:
+  mapper-locations: classpath:com/matcha/mapper/*.xml
+  type-aliases-package: com.matcha.entity
+logging:
+  level:
+    com:
+      matcha:
+        dao: debug
