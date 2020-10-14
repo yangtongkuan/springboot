@@ -3,6 +3,7 @@ package com.matcha;
 import com.matcha.entity.UserEntity;
 import com.matcha.service.UserService;
 import com.sun.org.apache.regexp.internal.RE;
+import org.apache.ibatis.cache.Cache;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
