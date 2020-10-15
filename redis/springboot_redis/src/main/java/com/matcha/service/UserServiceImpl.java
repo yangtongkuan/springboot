@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -24,12 +25,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public List<UserEntity> findById(Long id) {
+    public List<UserEntity> findById(String id) {
         return userDAO.findById(id);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(String id) {
         userDAO.deleteById(id);
+    }
+
+    @Override
+    public void update(UserEntity userEntity) {
+        userDAO.update(userEntity);
+    }
+
+    @Override
+    public void create(UserEntity userEntity) {
+        userEntity.setId(UUID.randomUUID().toString());
+        userDAO.create(userEntity);
     }
 }

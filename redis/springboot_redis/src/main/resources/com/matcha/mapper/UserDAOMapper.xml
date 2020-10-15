@@ -9,13 +9,23 @@
     </select>
 
     <!-- find by id-->
-    <select id="findById" parameterType="Long" resultType="UserEntity">
+    <select id="findById" parameterType="String" resultType="UserEntity">
         select id,name,age,bir from t_user where id = #{id}
     </select>
 
     <!--delete by id-->
-    <delete id="deleteById" parameterType="Long">
+    <delete id="deleteById">
         delete from t_user where id = #{id}
     </delete>
+
+    <!-- update -->
+    <update id="update" parameterType="UserEntity">
+        update t_user set name = #{name}, age = #{age}, bir=#{bir} where id = #{id}
+    </update>
+
+    <!-- create  -->
+    <insert id="create" parameterType="UserEntity">
+        insert into t_user values (#{id},#{name},#{age},#{bir})
+    </insert>
 
 </mapper>

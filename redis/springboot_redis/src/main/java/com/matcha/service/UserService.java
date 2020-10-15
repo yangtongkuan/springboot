@@ -8,7 +8,11 @@ public interface UserService {
 
     List<UserEntity> findAll();
 
-    List<UserEntity> findById(Long id);
+    List<UserEntity> findById(String id);
 
-    void deleteById(Long id);
+    void deleteById(String id);
+
+    void update(UserEntity userEntity);
+
+    void create(UserEntity userEntity);
 }

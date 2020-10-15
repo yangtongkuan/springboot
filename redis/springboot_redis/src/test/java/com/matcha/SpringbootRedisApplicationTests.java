@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -53,6 +54,24 @@ class SpringbootRedisApplicationTests {
         System.out.println("=====================================================");
         List<UserEntity> userEntities = userService.findAll();
         userEntities.forEach(item -> System.out.println(item));
+    }
+
+    @Test
+    public void testDel() {
+        List<UserEntity> userEntities = userService.findById("1");
+        userEntities.forEach(item -> System.out.println(item));
+        userEntities = userService.findById("1");
+        System.out.println("=====================================================");
+        userService.deleteById("1");
+        List<UserEntity> userEntityList = userService.findById("1");
+        userEntityList.forEach(item -> System.out.println(item));
+    }
+
+    @Test
+    public void testSave() {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setName("matcha").setAge(11).setBir(new Date());
+        userService.create(userEntity);
     }
 
 

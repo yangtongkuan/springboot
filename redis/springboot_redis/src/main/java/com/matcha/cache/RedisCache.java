@@ -49,7 +49,7 @@ public class RedisCache implements Cache {
     public void clear() {
         //清空namespace
         System.out.println("清空缓存~~~");
-        getRedisTemplate().opsForHash().delete(id.toString());
+        getRedisTemplate().delete(id.toString());//清空缓存
     }
 
     @Override

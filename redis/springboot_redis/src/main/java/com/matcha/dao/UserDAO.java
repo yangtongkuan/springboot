@@ -9,8 +9,12 @@ public interface UserDAO {
 
     List<UserEntity> findAll();
 
-    List<UserEntity> findById(Long id);
+    List<UserEntity> findById(String id);
 
-    void deleteById(Long id);
+    void deleteById(String id);
+
+    void update(UserEntity user);
+
+    void create(UserEntity userEntity);
 
 }
