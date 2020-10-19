@@ -1,6 +1,8 @@
 package com.matcha;
 
+import com.matcha.entity.EmpEntity;
 import com.matcha.entity.UserEntity;
+import com.matcha.service.EmpService;
 import com.matcha.service.UserService;
 import com.sun.org.apache.regexp.internal.RE;
 import org.apache.ibatis.cache.Cache;
@@ -27,6 +29,9 @@ class SpringbootRedisApplicationTests {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private EmpService empService;
 
     @Test
     public void testObj() {
@@ -63,8 +68,8 @@ class SpringbootRedisApplicationTests {
         userEntities = userService.findById("1");
         System.out.println("=====================================================");
         userService.deleteById("1");
-        List<UserEntity> userEntityList = userService.findById("1");
-        userEntityList.forEach(item -> System.out.println(item));
+//        List<UserEntity> userEntityList = userService.findById("1");
+//        userEntityList.forEach(item -> System.out.println(item));
     }
 
     @Test
@@ -72,6 +77,18 @@ class SpringbootRedisApplicationTests {
         UserEntity userEntity = new UserEntity();
         userEntity.setName("matcha").setAge(11).setBir(new Date());
         userService.create(userEntity);
+    }
+
+    @Test
+    public void testEmp() {
+        EmpEntity emp = empService.findById("1");
+        System.out.println("---->" + emp);
+        emp = empService.findById("1");
+        System.out.println("---->" + emp);
+        emp.setName("lisi");
+        empService.update(emp);
+        System.out.println("----->" + empService.findById("1"));
+
     }
 
 
