@@ -2,11 +2,18 @@ server:
   port: 8888
 
 spring:
-  redis:
-    database: 0
-    host: 39.97.252.169
-    port: 7000
 
+ # redis 单节点设置
+  redis:
+#    database: 0
+#    host: 39.97.252.169
+#    port: 7000
+# redis sentinel 配置
+# master书写是使用哨兵监听的那个名称
+    sentinel:
+      master: mySentinel
+      # 连接的不再是一个具体redis主机,书写的是多个哨兵节点
+      nodes: 39.97.252.169:26379
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://39.97.252.169:3306/2001?characterEncoding=UTF-8
