@@ -1,0 +1,19 @@
+server:
+  port: 8989
+spring:
+  datasource:
+    username: root
+    password: sdbs
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.97.252.169:3306/easypoi_springboot?characterEncoding=UTF-8
+  thymeleaf:
+    cache: false
+    servlet:
+      content-type: text/html
+  application:
+    name: easypoi_springboot
+# mybatis
+mybatis:
+  mapper-locations: classpath:com/matcha/mapper/*.xml
+  type-aliases-package: com.matcha.entity
