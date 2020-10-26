@@ -1,17 +1,19 @@
 package com.matcha.test;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
+import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.ImportParams;
 import com.matcha.entity.Card;
+import com.matcha.entity.Emp;
 import com.matcha.entity.Order;
 import com.matcha.entity.User;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -66,6 +68,22 @@ public class TestEasyPoi {
             outputStream.close();
             workbook.close();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testImport() {
+
+        try {
+            ImportParams params = new ImportParams();
+            params.setTitleRows(1); // 标题列占用几行
+            params.setHeadRows(2); // header列占几行
+            params.setStartSheetIndex(0); // 设置从哪个开始读取
+            params.setImportFields(new String[]{"编号", "状态"}); // 检测excel模板中是否有此字段
+            List<Emp> list = ExcelImportUtil.importExcel(new FileInputStream("F:\\aa.xls"), Emp.class, params);
+            list.forEach(System.out::println);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
