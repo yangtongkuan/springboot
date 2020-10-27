@@ -18,4 +18,6 @@ public interface UserDao {
 
     List<User> findAll();
 
+    void insert(User user);
+
 }

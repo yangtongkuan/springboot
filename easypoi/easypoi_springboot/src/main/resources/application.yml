@@ -13,7 +13,11 @@ spring:
       content-type: text/html
   application:
     name: easypoi_springboot
+  resources:
+    static-locations: classpath:/static/,file:${upload.dir}
 # mybatis
 mybatis:
   mapper-locations: classpath:com/matcha/mapper/*.xml
   type-aliases-package: com.matcha.entity
+upload:
+  dir: F:\\study\\springboot\\easypoi\\easypoi_springboot\\src\\main\\resources\\static\\imges
