@@ -24,12 +24,12 @@ public class User implements Serializable {
     private String name;
     @Excel(name = "生日", format = "yyyy年MM月dd日", width = 15.0)
     private Date bir;
-    @Excel(name = "爱好", width = 15.0)
+    @Excel(name = "爱好", width = 30.0)
     private String habbys;
-    @Excel(name = "头像信息", width = 22, type = 2, savePath = "F:\\study\\springboot\\easypoi\\easypoi_springboot\\src\\main\\resources\\static\\imges")
+    @Excel(name = "头像信息", width = 15, type = 2, savePath = "F:\\study\\springboot\\easypoi\\easypoi_springboot\\src\\main\\resources\\static\\imges")
     private String photo;
-    @Excel(name = "身份证号", width = 18.0)
+    @Excel(name = "身份证号", width = 30.0)
     private String no;
-    @Excel(name = "家庭住址", width = 20.0)
+    @Excel(name = "家庭住址", width = 30.0)
     private String address;
 }
